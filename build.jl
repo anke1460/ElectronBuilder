@@ -3,7 +3,7 @@ using Pkg.BinaryPlatforms
 using URIParser, FilePaths
 
 pkgname = "ElectronJS"
-version = v"25.2.0"
+version = v"29.1.4"
 build = 0
 
 build_path = joinpath(@__DIR__, "build")
@@ -109,6 +109,6 @@ mktempdir() do temp_path
 
         download_hash = archive_artifact(product_hash, joinpath(build_path, archive_filename))
 
-        bind_artifact!(artifact_toml, "electronjs_app", product_hash, platform=platform, force=true, download_info=Tuple[("https://github.com/davidanthoff/ElectronBuilder/releases/download/v$(URIParser.escape(string(version) * "+" * string(build)))/$archive_filename", download_hash)])
+        bind_artifact!(artifact_toml, "electronjs_app", product_hash, platform=platform, force=true, download_info=Tuple[("https://github.com/anke1460/ElectronBuilder/releases/download/v$(URIParser.escape(string(version) * "+" * string(build)))/$archive_filename", download_hash)])
     end
 end
